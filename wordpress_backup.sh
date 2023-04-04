@@ -26,3 +26,5 @@ mkdir $PROJECT_TMP_DIR
 
 mkdir $PROJECT_TMP_DIR/var
 mkdir $PROJECT_TMP_DIR/db
+cp -r $PROJECT_DIR/* $PROJECT_TMP_DIR/var/
+cp $PROJECT_DIR/.htaccess $PROJECT_TMP_DIR/var/
