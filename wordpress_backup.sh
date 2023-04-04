@@ -16,3 +16,5 @@ if [ $(echo $TMP_DIR | cut -b 1) = "/" ]; then
 else
   BACKUP_TMP_DIR=$BACKUP_ROOT_DIR/$TMP_DIR
 fi
+
+PROJECT_TMP_DIR=$BACKUP_TMP_DIR/$PROJECT_NAME
