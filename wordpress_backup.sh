@@ -41,3 +41,5 @@ zip -r $BACKUP_FILE_PATH $PROJECT_NAME
 chmod 400 $BACKUP_FILE_PATH
 
 rm -r $PROJECT_TMP_DIR
+
+find $BACKUP_ROOT_DIR -name "$PROJECT_NAME*.zip" -type f -mtime +$BACKUP_EXPIRED_TIME -delete
