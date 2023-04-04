@@ -18,3 +18,8 @@ else
 fi
 
 PROJECT_TMP_DIR=$BACKUP_TMP_DIR/$PROJECT_NAME
+
+if [ -d $PROJECT_TMP_DIR ]; then
+  rm -r $PROJECT_TMP_DIR
+fi
+mkdir $PROJECT_TMP_DIR
