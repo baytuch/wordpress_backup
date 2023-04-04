@@ -23,3 +23,6 @@ if [ -d $PROJECT_TMP_DIR ]; then
   rm -r $PROJECT_TMP_DIR
 fi
 mkdir $PROJECT_TMP_DIR
+
+mkdir $PROJECT_TMP_DIR/var
+mkdir $PROJECT_TMP_DIR/db
