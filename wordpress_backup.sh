@@ -32,3 +32,6 @@ cp $PROJECT_DIR/.htaccess $PROJECT_TMP_DIR/var/
 mysqldump --user=$(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_USER', '\(.*\)');.*$/\1/p") \
           --password=$(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_PASSWORD', '\(.*\)');.*$/\1/p") \
           $(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_NAME', '\(.*\)');.*$/\1/p") > $PROJECT_TMP_DIR/db/$PROJECT_NAME.sql
+
+BACKUP_FILE_NAME="$PROJECT_NAME"_$BACKUP_DATE.zip
+BACKUP_FILE_PATH=$BACKUP_ROOT_DIR/$BACKUP_FILE_NAME
