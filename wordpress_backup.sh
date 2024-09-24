@@ -26,8 +26,8 @@ mkdir $PROJECT_TMP_DIR
 
 mkdir $PROJECT_TMP_DIR/var
 mkdir $PROJECT_TMP_DIR/db
-cp -r $PROJECT_DIR/* $PROJECT_TMP_DIR/var/
-cp $PROJECT_DIR/.htaccess $PROJECT_TMP_DIR/var/
+cp -r -p $PROJECT_DIR/* $PROJECT_TMP_DIR/var/
+cp -p $PROJECT_DIR/.htaccess $PROJECT_TMP_DIR/var/
 
 mysqldump --user=$(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_USER', '\(.*\)');.*$/\1/p") \
           --password=$(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_PASSWORD', '\(.*\)');.*$/\1/p") \
