@@ -29,7 +29,9 @@ mkdir $PROJECT_TMP_DIR/db
 cp -r -p $PROJECT_DIR/* $PROJECT_TMP_DIR/var/
 cp -p $PROJECT_DIR/.htaccess $PROJECT_TMP_DIR/var/
 
-mysqldump --user=$(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_USER', '\(.*\)');.*$/\1/p") \
+mysqldump --no-tablespaces \
+          --single-transaction \
+          --user=$(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_USER', '\(.*\)');.*$/\1/p") \
           --password=$(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_PASSWORD', '\(.*\)');.*$/\1/p") \
           $(cat $PROJECT_DIR/wp-config.php | sed -ne "s/^define('DB_NAME', '\(.*\)');.*$/\1/p") > $PROJECT_TMP_DIR/db/$PROJECT_NAME.sql
 
